@@ -6,9 +6,10 @@ import defaultImage from '../defaultImage.jpg';
 
 const FriendListItems = ({ avatar = defaultImage, name, isOnline, id }) => {
   const online = isOnline ? 'Online' : 'Offline';
+  const classIsOnlane = isOnline ? [s.item, s.online].join(' ') : s.item;
   console.log(typeof isOnline);
   return (
-    <li key={id} className={s.item}>
+    <li key={id} className={classIsOnlane}>
       <span className={s.status}>{online} </span>
       <img className={s.avatar} src={avatar} alt={name} width="48" />
       <p className="name">{name}</p>
